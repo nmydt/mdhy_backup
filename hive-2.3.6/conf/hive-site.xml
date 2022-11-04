@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<property>
+	    <name>javax.jdo.option.ConnectionURL</name>
+	    <value>jdbc:mysql://lylg102:3306/metastore?createDatabaseIfNotExist=true</value>
+	    <description>JDBC connect string for a JDBC metastore</description>
+	</property>
+
+	<property>
+	    <name>javax.jdo.option.ConnectionDriverName</name>
+	    <value>com.mysql.jdbc.Driver</value>
+	    <description>Driver class name for a JDBC metastore</description>
+	</property>
+
+	<property>
+	    <name>javax.jdo.option.ConnectionUserName</name>
+	    <value>root</value>
+	    <description>username to use against metastore database</description>
+	</property>
+
+	<property>
+	    <name>javax.jdo.option.ConnectionPassword</name>
+	    <value>000000</value>
+	    <description>password to use against metastore database</description>
+	</property>
+    
+    <property>
+         <name>hive.metastore.warehouse.dir</name>
+         <value>/user/hive/warehouse</value>
+         <description>location of default database for the warehouse</description>
+    </property>
+    
+    <property>
+        <name>hive.cli.print.header</name>
+        <value>true</value>
+    </property>
+
+    <property>
+        <name>hive.cli.print.current.db</name>
+        <value>true</value>
+    </property>
+    
+    <property>
+        <name>hive.metastore.schema.verification</name>
+        <value>false</value>
+    </property>
+    
+    <property>
+        <name>datanucleus.schema.autoCreateAll</name>
+        <value>true</value> 
+    </property>
+<property>
+    <name>hive.execution.engine</name>
+    <value>tez</value>
+</property>
+
+<property>
+
+<name>hive.metastore.sasl.enabled</name>
+  <value>false</value>
+  <description>If true, the metastore Thrift interface will be secured with SASL. Clients must authenticate with Kerberos.</description>
+</property>
+
+<!-- 指定 hiveserver2 连接的 host -->
+<property>
+	<name>hive.server2.thrift.bind.host</name>
+	<value>lylg102</value>
+</property>
+<!-- 指定 hiveserver2 连接的端口号 -->
+<property>
+	<name>hive.server2.thrift.port</name>
+	<value>10000</value>
+</property>
+<property>
+  <name>hive.server2.enable.doAs</name>
+  <value>false</value>
+</property>
+
+<property>
+  <name>hive.server2.idle.operation.timeout</name>
+  <value>2000000</value>
+<description>设置查询超时时间为2000s</description>
+</property>
+<property>
+
+  <name>hive.server2.session.check.interval</name>
+
+  <value>60000</value>
+
+</property>
+
+<property>
+
+  <name>hive.server2.idle.session.timeout</name>
+
+  <value>3600000</value>
+<description>设置session不活动1h断开</description>
+
+</property>
+<property>
+  <name>hive.metastore.sasl.enabled</name>
+  <value>false</value>
+  <description>If true, the metastore Thrift interface will be secured with SASL. Clients must authenticate with Kerberos.</description>
+</property>
+
+<property>
+<description>设置Hive用户密码</description>
+        <name>hive.server2.authentication</name>
+        <value>CUSTOM</value>
+    </property>
+    <property>
+        <name>hive.server2.custom.authentication.class</name>
+        <value>com.lylg.CustomHiveServer2Auth</value>
+    </property>
+    <property>
+        <name>hive.server2.custom.authentication.file</name>
+        <value>/opt/module/hive-2.3.6/libexec/conf/user.password.conf</value>
+    </property>
+
+
+</configuration>
+

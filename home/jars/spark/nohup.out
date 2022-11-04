@@ -1,0 +1,6 @@
+Ivy Default Cache set to: /home/lylg/.ivy2/cache
+The jars for the packages stored in: /home/lylg/.ivy2/jars
+:: loading settings :: url = jar:file:/opt/module/spark-2.2.0/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+org.apache.spark#spark-streaming-kafka-0-8_2.11 added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent;1.0
+	confs: [default]
